@@ -35,12 +35,11 @@
 
 ## commentsテーブル
 
-| Column      | Type       | Options           |
-|-------------|------------|-------------------|
-| text        | text       | null: false       |
-| food        | references | foreign_key: true |
-| customer    | references | foreign_key: true |
-
+| Column      | Type       | Options     |
+|-------------|------------|-------------|
+| text        | text       | null: false |
+| food        | references | null: false foreign_key: true |
+| customer    | references | null: false foreign_key: true |
 ### Association
 
 - belongs_to :items
