@@ -172,6 +172,9 @@
 -各ページのユーザー名をクリックすると詳細ページに移行すること  
 -必要な情報が全て表示されていること  
 
+# ER図
+![image](https://user-images.githubusercontent.com/77384318/110062235-3c08f900-7dac-11eb-9d07-7ed742fc27cd.png)
+
 
 # テーブル設計
 
@@ -182,7 +185,7 @@
 | email      | string  | null: false, unique: true|
 | password   | string  | null: false |
 | name       | string  | null: false |
-| text       | text    |             |
+| user_text  | text    |             |
 | image      | string  |             |
 | phone      | string  | null: false |
 
@@ -196,8 +199,8 @@
 | Column      | Type       | Options     |
 |-------------|------------|-------------|
 | food        | string     | null: false |
-| concept     | text       | null: false |
-| price       | text       | null: false |
+| item_text   | text       | null: false |
+| price       | integer    | null: false |
 | area_id     | integer    | null: false |
 | address     | string     | null: false |
 | category_id | integer    | null: false |
@@ -210,11 +213,11 @@
 
 ## commentsテーブル
 
-| Column      | Type       | Options     |
-|-------------|------------|-------------|
-| text        | text       | null: false |
-| food        | references | null: false foreign_key: true |
-| customer    | references | null: false foreign_key: true |
+| Column       | Type       | Options     |
+|--------------|------------|-------------|
+| comment_text | text       | null: false |
+| food         | references | null: false foreign_key: true |
+| customer     | references | null: false foreign_key: true |
 ### Association
 
 - belongs_to :items
